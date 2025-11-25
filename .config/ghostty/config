@@ -1,4 +1,14 @@
-# Vercel
-theme = Dracula+
+# ------- General -------
+theme = TokyoNight Moon
 font-family = JetBrainsMono NF
 font-size = 11
+confirm-close-surface = false
+font-feature = -calt, -liga, -dlig
+
+#  ------- Keybinds -------
+keybind = ctrl+t=new_tab
+keybind = ctrl+w=close_tab
+keybind = ctrl+tab=next_tab
+keybind = ctrl+shift+tab=previous_tab
+keybind = ctrl+shift+arrow_left=move_tab:-1
+keybind = ctrl+shift+arrow_right=move_tab:1
