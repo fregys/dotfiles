@@ -17,21 +17,23 @@ prepend_previewers = [
 # options when pressing "o" or "O"
 [opener]
 extract = [
-	{ run = 'ouch d -y "$@"', desc = "Extract here with ouch", for = "unix" },
+	{ run = 'ouch d -y %s', desc = "Extract here with ouch", for = "unix" },
 ]
 edit = [
-	{ run = 'nvim "$0"', block = true, desc = "Neovim", for = "unix" },
-    { run = 'codium "$0"', orphan = true, desc = "Codium", for = "unix" },
+	{ run = 'nvim %s', block = true, desc = "Neovim", for = "unix" },
+    { run = 'codium %s', orphan = true, desc = "Codium", for = "unix" },
 ]
 display_image = [
-    { run = 'gwenview "$0"', orphan = true, desc = "Gwenview", for = "unix" },
-    { run = 'pinta "$0"', orphan = true, desc = "Pinta", for = "unix" },
+    # { run = 'gwenview %s', orphan = true, desc = "Gwenview", for = "unix" },
+    { run = 'imv %s', orphan = true, desc = "Image Viewer", for = "unix" },
+    { run = 'pinta %s', orphan = true, desc = "Pinta", for = "unix" },
 ]
 display_pdf = [
-    { run = 'okular "$0"', orphan = true, desc = "Okular", for = "unix" },
+    # { run = 'okular %s', orphan = true, desc = "Okular", for = "unix" },
+    { run = 'evince %s', orphan = true, desc = "Document Viewer", for = "unix" },
 ]
 display_video = [
-    { run = 'vlc "$0"', orphan = true, desc = "Vlc", for = "linux"},
+    { run = 'vlc %s', orphan = true, desc = "Vlc", for = "linux"},
 ]
 
 [open]

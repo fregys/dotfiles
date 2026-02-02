@@ -1,3 +1,6 @@
 [status]
 sep_left = { open = "", close = "" }
 sep_right = { open = "", close = "" }
+
+[indicator]
+padding = { open = "█", close = "█" }
