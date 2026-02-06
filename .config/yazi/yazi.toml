@@ -48,6 +48,6 @@ prepend_rules = [
   { mime = "image/*", use = "display_image" },
   { mime = "application/pdf", use = "display_pdf" },
 
-  { url = "*.sh", use = "run" },
+  { url = "*.sh", use = ["edit", "run"] },
   { url = "*.AppImage", use = "run_appimage" },
 ]
