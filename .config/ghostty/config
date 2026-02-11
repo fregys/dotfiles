@@ -26,7 +26,7 @@ initial-command = fish
 shell-integration = fish
 
 # Slowdown mouse scrolling
-mouse-scroll-multiplier = 0.95
+mouse-scroll-multiplier = 3
 
 #  ------- Keybinds -------
 keybind = ctrl+t=new_tab
