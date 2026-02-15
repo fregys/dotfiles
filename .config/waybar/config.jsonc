@@ -13,6 +13,7 @@
     "hyprland/language",
     "custom/notification",
     "bluetooth",
+    "custom/vpn",
     "network",
     "pulseaudio",
     "cpu",
@@ -51,8 +52,17 @@
 
   "custom/crypto": {
     "format": " | {} ₿",
+    "tooltip": false,
     "exec": "curl -s 'https://api.binance.com/api/v1/ticker/price?symbol=BTCUSDT' | jq -r '.price | tonumber | floor'",
     "interval": 300
+  },
+
+  "custom/vpn": {
+    "format": "{}   ",
+    "exec": "ip link show type wireguard | grep -q 'UP' && echo '󰿂' || echo '󰌆'",
+    "interval": 60,
+    "on-click": "/home/willy/.local/bin/handle_vpns",
+    "tooltip": false
   },
 
   "custom/weather": {

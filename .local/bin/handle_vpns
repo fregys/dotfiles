@@ -1,0 +1,24 @@
+#!/bin/bash
+
+VPN_DIR="$HOME/Documents/VPNs"
+
+# 1. Fetch .conf files and format them for Walker
+# We strip the extension so the menu looks clean
+SELECTION=$(ls "$VPN_DIR"/*.conf | xargs -n 1 basename | sed 's/\.conf//' | walker --dmenu)
+
+# Exit if selection is empty (user hit Esc)
+if [ -z "$SELECTION" ]; then
+    exit
+fi
+
+echo $SELECTION
+
+# 2. Check if the interface is already UP
+# wg-quick uses the filename as the interface name
+if ip link show "$SELECTION" > /dev/null 2>&1; then
+    pkexec wg-quick down "$VPN_DIR/$SELECTION.conf"
+    notify-send "VPN" "Disconnected from $SELECTION"
+else
+    pkexec wg-quick up "$VPN_DIR/$SELECTION.conf"
+    notify-send "VPN" "Connected to $SELECTION"
+fi

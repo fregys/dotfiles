@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# 1. Fetch windows and format as: "Title | address"
+# Note: the address is at the END so awk can find it easily even with long titles
+SELECTION=$(hyprctl clients -j | jq -r '.[] | "\(.initialTitle) | \(.address)"' | walker --dmenu)
+
+# Exit if selection is empty (user hit Esc)
+if [ -z "$SELECTION" ]; then
+    exit
+fi
+
+# 2. Extract the address (the very last "word" in the string)
+ADDR=$(echo "$SELECTION" | awk '{print $NF}')
+
+# 3. Focus using the unique address
+hyprctl dispatch focuswindow address:"$ADDR"
