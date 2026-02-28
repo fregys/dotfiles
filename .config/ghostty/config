@@ -36,3 +36,6 @@ keybind = ctrl+shift+tab=previous_tab
 keybind = ctrl+shift+arrow_left=move_tab:-1
 keybind = ctrl+shift+arrow_right=move_tab:1
 
+
+# Fix general slowness on hyprland (https://github.com/ghostty-org/ghostty/discussions/3224)
+async-backend = epoll
