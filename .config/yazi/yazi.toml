@@ -34,6 +34,7 @@ display_pdf = [
   { run = 'evince %s', orphan = true, desc = "Document Viewer", for = "unix" },
 ]
 display_video = [
+  { run = 'mpv %s', orphan = true, desc = "mpv", for = "unix" },
   { run = 'vlc %s', orphan = true, desc = "Vlc", for = "unix" },
 ]
 run = [

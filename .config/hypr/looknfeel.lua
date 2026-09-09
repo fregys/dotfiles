@@ -1,17 +1,17 @@
 -- Change the default Omarchy look'n'feel.
 
 -- https://wiki.hypr.land/Configuring/Basics/Variables/#general
--- hl.config({
---   general = {
---     -- No gaps between windows or borders.
---     gaps_in = 0,
---     gaps_out = 0,
---     border_size = 0,
---
---     -- Change to niri-like side-scrolling layout.
---     layout = "scrolling",
---   },
--- })
+hl.config({
+  general = {
+    -- No gaps between windows or borders.
+    gaps_in = 4,
+    gaps_out = 4,
+    border_size = 2,
+
+    -- Change to niri-like side-scrolling layout.
+    -- layout = "scrolling",
+  },
+})
 
 -- https://wiki.hypr.land/Configuring/Basics/Variables/#decoration
 -- hl.config({
@@ -61,4 +61,4 @@ hl.animation({ leaf = "fadeSwitch", enabled = false })
 -- "default-opacity" and applies "0.985 0.96" at the end of its own windows.lua;
 -- re-applying the rule here (user config loads later) overrides just the active
 -- value and leaves unfocused windows dimmed as before.
-o.window({ tag = "default-opacity" }, { opacity = "1.0 0.96" })
+o.window({ tag = "default-opacity" }, { opacity = "1.0 0.98" })

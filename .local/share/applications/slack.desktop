@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=Slack
+StartupWMClass=Slack
+Comment=Slack Desktop
+GenericName=Slack Client for Linux
+# LIBVA_DRIVER_NAME=radeonsi overrides the global 'nvidia' that Omarchy's
+# hypr/nvidia.lua exports. Chromium picks the AMD iGPU here (renderD129), so
+# the inherited NVIDIA VA-API driver decodes on the wrong GPU: with GPU
+# compositing on, remote huddle video stays blank and the UI tears. Dropping
+# --disable-gpu-compositing (for >60fps) is what exposed this.
+Exec=env LIBVA_DRIVER_NAME=radeonsi /usr/bin/slack --ozone-platform=wayland --enable-wayland-ime --enable-features=UseOzonePlatform,WebRTCPipeWireCapturer,WaylandWindowDecorations --disable-features=WaylandFractionalScaleV1 -s %U
+Icon=slack
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Network;InstantMessaging;
+MimeType=x-scheme-handler/slack;

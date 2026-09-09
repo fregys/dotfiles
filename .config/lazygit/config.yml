@@ -24,6 +24,9 @@ gui:
     searchingActiveBorderColor:
       - "#ff9e64"
 
+os:
+  editPreset: "nvim"
+
 customCommands:
   - key: "r"
     description: "Move/rename worktree"

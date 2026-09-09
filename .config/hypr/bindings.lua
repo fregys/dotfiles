@@ -60,5 +60,12 @@ o.bind("SUPER + XF86AudioMute", "Switch audio output", "omarchy-audio-output-swi
 o.bind("SUPER + Multi_Key", "Open Apps", "list_active_apps")
 o.bind("SUPER + grave", "Toggle floating focus", "focus-toggle-float")
 
--- Todo list (willy.todos shell plugin, see ~/.config/omarchy/plugins/).
+-- Custom plugins
 o.bind("SUPER + SHIFT + T", "Todos", "omarchy-shell shell toggle willy.todos")
+o.bind("SUPER + SHIFT + V", "VPNs", "omarchy-shell shell toggle willy.vpn")
+
+hl.unbind("SUPER + SHIFT + X") -- was: X (x.com webapp)
+o.bind("SUPER + SHIFT + X", "Notification Center", "omarchy-shell shell toggle jankeesvw.notification-center")
+o.bind("SUPER + SHIFT + H", "Hardware vitals", "omarchy-shell shell toggle im0001gt.hw-tooltip")
+o.bind("SUPER + SHIFT + Q", "Stocks", "omarchy-shell shell toggle io.github.5d0tal1gat0r.stocks")
+o.bind("SUPER + SHIFT + U", "Screen Time", "omarchy-shell shell toggle agx.screen-time")

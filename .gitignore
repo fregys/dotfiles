@@ -1,0 +1,6 @@
+
+# Omarchy shell plugins live in their own repos, installed with
+#   omarchy plugin add <git-url> --enable
+# Keeping them here would stow symlinks into the plugin dir, which
+# omarchy-plugin-validate rejects outright.
+.config/omarchy/plugins/
